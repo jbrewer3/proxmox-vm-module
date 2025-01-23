@@ -6,7 +6,6 @@ resource "proxmox_virtual_environment_download_file" "iso_image" {
   node_name              = "pve"  # Proxmox node where the image is being downloaded
   file_name              = "${each.value.image_name}"  # The name of the image file
   url                    = each.value.image_url  # URL to the image
-  decompression_algorithm = "gz"  # If needed
   overwrite              = false  # Don't overwrite the image unless explicitly needed
 }
 
